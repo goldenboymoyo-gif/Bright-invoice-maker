@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" fill="none">
+  <title>BM Monogram - White</title>
+
+  <rect x="10" y="10" width="7" height="64" rx="2" fill="#fff"/>
+  <path d="M10 10 h28 c12 0 20 6 20 16 s-8 16-20 16 h-28" fill="#fff"/>
+  <path d="M10 40 h34 c14 0 22 7 22 17 s-8 17-22 17 h-34" fill="#fff"/>
+  <rect x="58" y="10" width="7" height="64" rx="1" fill="#fff"/>
+  <rect x="90" y="10" width="7" height="64" rx="1" fill="#fff"/>
+  <path d="M58 10 L81.5 46 L105 10" stroke="#fff" stroke-width="8" stroke-linejoin="miter" fill="none"/>
+  <rect x="30" y="82" width="40" height="18" rx="9" fill="#fff"/>
+  <text x="50" y="95" text-anchor="middle" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#0F172A">&lt;/&gt;</text>
+</svg>

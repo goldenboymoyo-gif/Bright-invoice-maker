@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" fill="none">
+  <title>BM Monogram</title>
+
+  <!-- B left stem -->
+  <rect x="10" y="10" width="7" height="64" rx="2" fill="#2563EB"/>
+
+  <!-- B top bowl -->
+  <path d="M10 10 h28 c12 0 20 6 20 16 s-8 16-20 16 h-28" fill="#2563EB"/>
+
+  <!-- B bottom bowl (wider) -->
+  <path d="M10 40 h34 c14 0 22 7 22 17 s-8 17-22 17 h-34" fill="#2563EB"/>
+
+  <!-- M left leg -->
+  <rect x="58" y="10" width="7" height="64" rx="1" fill="#0F172A"/>
+
+  <!-- M right leg -->
+  <rect x="90" y="10" width="7" height="64" rx="1" fill="#0F172A"/>
+
+  <!-- M V stroke -->
+  <path d="M58 10 L81.5 46 L105 10" stroke="#0F172A" stroke-width="8" stroke-linejoin="miter" fill="none"/>
+
+  <!-- </> code badge -->
+  <rect x="30" y="82" width="40" height="18" rx="9" fill="#2563EB"/>
+  <text x="50" y="95" text-anchor="middle" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#fff">&lt;/&gt;</text>
+</svg>

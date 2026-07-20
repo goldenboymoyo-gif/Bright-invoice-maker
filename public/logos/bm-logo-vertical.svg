@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" fill="none">
+  <title>Bright Moyo - Vertical Logo</title>
+
+  <!-- Monogram centered -->
+  <g transform="translate(40, 10)">
+    <rect x="10" y="10" width="7" height="64" rx="2" fill="#2563EB"/>
+    <path d="M10 10 h28 c12 0 20 6 20 16 s-8 16-20 16 h-28" fill="#2563EB"/>
+    <path d="M10 40 h34 c14 0 22 7 22 17 s-8 17-22 17 h-34" fill="#2563EB"/>
+    <rect x="58" y="10" width="7" height="64" rx="1" fill="#0F172A"/>
+    <rect x="90" y="10" width="7" height="64" rx="1" fill="#0F172A"/>
+    <path d="M58 10 L81.5 46 L105 10" stroke="#0F172A" stroke-width="8" stroke-linejoin="miter" fill="none"/>
+    <rect x="30" y="82" width="40" height="18" rx="9" fill="#2563EB"/>
+    <text x="50" y="95" text-anchor="middle" font-family="'SF Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#fff">&lt;/&gt;</text>
+  </g>
+
+  <!-- BRIGHT MOYO -->
+  <text x="100" y="150" text-anchor="middle" font-family="Inter, Manrope, sans-serif" font-size="20" font-weight="700" fill="#0F172A" letter-spacing="1">BRIGHT MOYO</text>
+
+  <!-- SOFTWARE DEVELOPER -->
+  <text x="100" y="172" text-anchor="middle" font-family="Inter, Manrope, sans-serif" font-size="9" font-weight="400" fill="#2563EB" letter-spacing="3.5">SOFTWARE DEVELOPER</text>
+
+  <!-- Accent line -->
+  <rect x="75" y="188" width="50" height="2" rx="1" fill="#2563EB"/>
+</svg>
