@@ -49,6 +49,13 @@ export default function App() {
     ]);
   };
 
+  const addMaintenance = () => {
+    setItems((prev) => [
+      ...prev,
+      { id: Date.now(), description: "Maintenance", quantity: 1, rate: 0 },
+    ]);
+  };
+
   const removeItem = (id) => {
     if (items.length > 1) {
       setItems((prev) => prev.filter((item) => item.id !== id));
@@ -166,7 +173,10 @@ export default function App() {
               </div>
             ))}
           </div>
-          <button className="btn-add" onClick={addItem}>+ Add Item</button>
+          <div className="add-item-buttons">
+            <button className="btn-add" onClick={addItem}>+ Add Item</button>
+            <button className="btn-add btn-maintenance" onClick={addMaintenance}>+ Maintenance</button>
+          </div>
         </div>
 
         <div className="form-section">

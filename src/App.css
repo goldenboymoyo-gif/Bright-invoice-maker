@@ -213,6 +213,22 @@ textarea::placeholder {
   border-color: var(--accent);
 }
 
+.btn-maintenance {
+  border-color: #F59E0B;
+  color: #D97706;
+}
+
+.btn-maintenance:hover {
+  background: #FFFBEB;
+  border-color: #D97706;
+}
+
+.add-item-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
 .btn-download {
   width: 100%;
   padding: 0.8rem;

@@ -4,6 +4,14 @@
   box-shadow: 0 1px 8px rgba(15, 23, 42, 0.1);
   border-radius: 3px;
   overflow: hidden;
+  height: fit-content;
+}
+
+@media print {
+  .invoice-page {
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
 
 .invoice-container {
