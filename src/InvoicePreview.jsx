@@ -1,7 +1,9 @@
 import { forwardRef } from "react";
 import "./InvoicePreview.css";
 
-const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, subtotal, taxAmount, total, signature }, ref) {
+const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, serviceSubtotal, maintenanceSubtotal, subtotal, taxAmount, total, signature }, ref) {
+  const serviceItems = items.filter((i) => i.type !== "maintenance");
+  const maintenanceItems = items.filter((i) => i.type === "maintenance");
   return (
     <div className="invoice-page" ref={ref}>
       <div className="invoice-container">
@@ -61,7 +63,7 @@ const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, subt
               </tr>
             </thead>
             <tbody>
-              {items.map((item, index) => (
+              {serviceItems.map((item, index) => (
                 <tr key={item.id}>
                   <td className="col-num">{index + 1}</td>
                   <td>{item.description || "—"}</td>
@@ -70,6 +72,24 @@ const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, subt
                   <td className="col-amount">${(item.quantity * item.rate).toFixed(2)}</td>
                 </tr>
               ))}
+              {maintenanceItems.length > 0 && (
+                <>
+                  <tr className="section-divider">
+                    <td colSpan="5">
+                      <span className="section-tag">Monthly Maintenance</span>
+                    </td>
+                  </tr>
+                  {maintenanceItems.map((item, index) => (
+                    <tr key={item.id}>
+                      <td className="col-num">{serviceItems.length + index + 1}</td>
+                      <td>{item.description || "—"}</td>
+                      <td className="col-qty">{item.quantity}</td>
+                      <td className="col-rate">${item.rate.toFixed(2)}</td>
+                      <td className="col-amount">${(item.quantity * item.rate).toFixed(2)}</td>
+                    </tr>
+                  ))}
+                </>
+              )}
             </tbody>
           </table>
         </section>
@@ -90,18 +110,40 @@ const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, subt
           </div>
 
           <div className="totals-box">
-            <div className="total-row">
-              <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
-            </div>
-            {invoice.taxRate > 0 && (
+            {serviceSubtotal > 0 && (
               <div className="total-row">
-                <span>Tax ({invoice.taxRate}%)</span>
-                <span>${taxAmount.toFixed(2)}</span>
+                <span>Services</span>
+                <span>${serviceSubtotal.toFixed(2)}</span>
               </div>
             )}
+            {serviceSubtotal > 0 && invoice.taxRate > 0 && (
+              <div className="total-row">
+                <span>Tax ({invoice.taxRate}%)</span>
+                <span>${(serviceSubtotal * invoice.taxRate / 100).toFixed(2)}</span>
+              </div>
+            )}
+            {serviceSubtotal > 0 && (
+              <div className="total-row total-sub">
+                <span>Services Total</span>
+                <span>${(serviceSubtotal + serviceSubtotal * invoice.taxRate / 100).toFixed(2)}</span>
+              </div>
+            )}
+            {maintenanceSubtotal > 0 && (
+              <>
+                <div className="total-row-divider" />
+                <div className="total-row">
+                  <span>Monthly Maintenance</span>
+                  <span>${maintenanceSubtotal.toFixed(2)}</span>
+                </div>
+                <div className="total-row total-sub">
+                  <span>Maintenance Total</span>
+                  <span>${maintenanceSubtotal.toFixed(2)}</span>
+                </div>
+              </>
+            )}
+            <div className="total-row-divider" />
             <div className="total-row total-final">
-              <span>Total</span>
+              <span>Total Due</span>
               <span>${total.toFixed(2)}</span>
             </div>
           </div>

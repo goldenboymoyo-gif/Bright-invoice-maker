@@ -6,7 +6,7 @@ import SignaturePad from "./SignaturePad";
 import "./App.css";
 
 const defaultItems = [
-  { id: 1, description: "Web Application Development", quantity: 1, rate: 2500.0 },
+  { id: 1, description: "Web Application Development", quantity: 1, rate: 2500.0, type: "service" },
 ];
 
 const defaultInvoice = {
@@ -45,14 +45,14 @@ export default function App() {
   const addItem = () => {
     setItems((prev) => [
       ...prev,
-      { id: Date.now(), description: "", quantity: 1, rate: 0 },
+      { id: Date.now(), description: "", quantity: 1, rate: 0, type: "service" },
     ]);
   };
 
   const addMaintenance = () => {
     setItems((prev) => [
       ...prev,
-      { id: Date.now(), description: "Maintenance", quantity: 1, rate: 0 },
+      { id: Date.now(), description: "Monthly Maintenance", quantity: 1, rate: 0, type: "maintenance" },
     ]);
   };
 
@@ -62,7 +62,9 @@ export default function App() {
     }
   };
 
-  const subtotal = items.reduce((sum, item) => sum + item.quantity * item.rate, 0);
+  const serviceSubtotal = items.filter((i) => i.type !== "maintenance").reduce((sum, item) => sum + item.quantity * item.rate, 0);
+  const maintenanceSubtotal = items.filter((i) => i.type === "maintenance").reduce((sum, item) => sum + item.quantity * item.rate, 0);
+  const subtotal = serviceSubtotal + maintenanceSubtotal;
   const taxAmount = subtotal * (invoice.taxRate / 100);
   const total = subtotal + taxAmount;
 
@@ -216,7 +218,7 @@ export default function App() {
       </div>
 
       <div className="preview-wrapper">
-        <InvoicePreview ref={invoiceRef} invoice={invoice} items={items} subtotal={subtotal} taxAmount={taxAmount} total={total} signature={signature} />
+        <InvoicePreview ref={invoiceRef} invoice={invoice} items={items} serviceSubtotal={serviceSubtotal} maintenanceSubtotal={maintenanceSubtotal} subtotal={subtotal} taxAmount={taxAmount} total={total} signature={signature} />
       </div>
     </div>
   );

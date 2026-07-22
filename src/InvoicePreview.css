@@ -217,6 +217,24 @@
   border-bottom: 1px solid #CBD5E1;
 }
 
+.invoice-table .section-divider td {
+  padding: 8px 10px 4px;
+  border-bottom: none;
+  background: #f8fafc;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #D97706;
+  padding: 2px 8px;
+  border-left: 3px solid #F59E0B;
+  margin-left: 2px;
+}
+
 /* Footer grid */
 .invoice-footer-grid {
   display: flex;
@@ -261,6 +279,18 @@
   font-size: 14px;
   font-weight: 700;
   color: #0F172A;
+}
+
+.total-sub {
+  font-weight: 600;
+  color: #334155;
+  border-bottom: none;
+}
+
+.total-row-divider {
+  height: 1px;
+  background: #CBD5E1;
+  margin: 4px 0;
 }
 
 /* Signature */
