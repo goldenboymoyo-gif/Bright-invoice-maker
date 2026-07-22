@@ -141,11 +141,6 @@ const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, serv
                 </div>
               </>
             )}
-            <div className="total-row-divider" />
-            <div className="total-row total-final">
-              <span>Total Due</span>
-              <span>${total.toFixed(2)}</span>
-            </div>
           </div>
         </div>
 
