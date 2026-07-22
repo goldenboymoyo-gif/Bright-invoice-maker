@@ -64,9 +64,8 @@ export default function App() {
 
   const serviceSubtotal = items.filter((i) => i.type !== "maintenance").reduce((sum, item) => sum + item.quantity * item.rate, 0);
   const maintenanceSubtotal = items.filter((i) => i.type === "maintenance").reduce((sum, item) => sum + item.quantity * item.rate, 0);
-  const subtotal = serviceSubtotal + maintenanceSubtotal;
-  const taxAmount = subtotal * (invoice.taxRate / 100);
-  const total = subtotal + taxAmount;
+  const taxAmount = serviceSubtotal * (invoice.taxRate / 100);
+  const total = serviceSubtotal + taxAmount;
 
   const downloadPDF = async () => {
     const element = invoiceRef.current;
