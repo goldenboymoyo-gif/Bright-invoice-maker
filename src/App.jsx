@@ -217,7 +217,7 @@ export default function App() {
       </div>
 
       <div className="preview-wrapper">
-        <InvoicePreview ref={invoiceRef} invoice={invoice} items={items} serviceSubtotal={serviceSubtotal} maintenanceSubtotal={maintenanceSubtotal} subtotal={subtotal} taxAmount={taxAmount} total={total} signature={signature} />
+        <InvoicePreview ref={invoiceRef} invoice={invoice} items={items} serviceSubtotal={serviceSubtotal} maintenanceSubtotal={maintenanceSubtotal} taxAmount={taxAmount} total={total} signature={signature} />
       </div>
     </div>
   );

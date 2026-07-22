@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import "./InvoicePreview.css";
 
-const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, serviceSubtotal, maintenanceSubtotal, subtotal, taxAmount, total, signature }, ref) {
+const InvoicePreview = forwardRef(function InvoicePreview({ invoice, items, serviceSubtotal, maintenanceSubtotal, taxAmount, total, signature }, ref) {
   const serviceItems = items.filter((i) => i.type !== "maintenance");
   const maintenanceItems = items.filter((i) => i.type === "maintenance");
   return (
